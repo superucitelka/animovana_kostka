@@ -2,6 +2,10 @@
 const dice = document.getElementById('dice');
 const result = document.getElementById('result');
 const play = document.getElementById('play');
+/* Proměnná odkazující na formulář */
+const savegame = document.getElementById('savegame');
+/* Proměnná odkazující na formulářový input zobrazující body */
+const points = document.getElementById('points');
 
 /* Globální proměnné */
 let hod; // Uložení hodnoty aktuálního hodu
@@ -35,6 +39,15 @@ play.addEventListener('click', function() {
         result.innerHTML = statistika();
         // změní se nápis v tlačítku na HREJ
         play.innerText = 'HREJ';
+        // Když je odhozeno 10 hodů:
+        if (hody.length == 10) {
+            // znepřístupní se tlačítko HREJ
+            play.disabled = true;
+            // zobrazí se formulář pro odeslání výsledků
+            savegame.style.display = 'block';
+            // do inputu s id points se vloží součet bodů
+            points.value = sum();
+        }
     }
 })
 

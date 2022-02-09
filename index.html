@@ -10,6 +10,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        /* Potlačení zobrazení formuláře pro odeslání výsledků */
+        #savegame {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,7 +33,7 @@
         <!-- Formulář pro odeslání výsledků na server -->
         <div class="container border p-3 mt-5" id="savegame">
             <h2 class="bg-info text-center text-white p-2">Uložení výsledků hry</h2>
-            <form action="save-post.php" method="POST">
+            <form>
                 <div class="form-group row">
                     <label for="player" class="col-sm-3 col-form-label">Jméno hráče</label>
                     <div class="col-sm-3">
